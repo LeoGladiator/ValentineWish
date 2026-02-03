@@ -1,50 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentines Day</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .gradient-background {
-      background: rgb(255, 208, 229);
-      background: linear-gradient(180deg, rgba(255, 208, 229, 1) 0%, rgba(255, 232, 242, 1) 36%, rgba(255, 255, 255, 1) 100%);
-    }
-
-    .bounce2 {
-      animation: bounce2 2s ease infinite;
-    }
-
-    @keyframes bounce2 {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-      }
-      40% {
-        transform: translateY(-20px);
-      }
-      60% {
-        transform: translateY(-10px);
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Happy Valentine :)</title>
+    <link
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="./img/heart.svg" />
+    <link rel="stylesheet" href="style/style.css" />
   </head>
 
-  <<body style="background-image: url('img/back.jpg'); background-size: cover;">>
+  <body>
     <div class="container">
       <div class="one">
         <h1 class="one">
           Hey
           <span id="name">xyz</span>
         </h1>
-        <p class="two" id="greetingText">I really like you and your name btw!</p>
+        <p class="two" id="greetingText">I really like your name btw!</p>
       </div>
       <div class="three">
-        <p>It's almost Valentine's Day!!! :D</p>
+        <p>It's Valentine!!! :D</p>
       </div>
       <div class="four">
         <div class="text-box">
           <p class="hbd-chatbox">
-            Happy Valentine's Day!! Yeee! Hope you are doing well, Love and etc...
+            Happy Valentine's Day!! Yeee! Love and blah blah...
           </p>
           <p class="fake-btn">Send</p>
         </div>
@@ -57,7 +40,7 @@
         </p>
         <p class="idea-4">Because,</p>
         <p class="idea-5">
-          You are <strong>special</strong>
+          You are Special
           <span>:)</span>
         </p>
         <p class="idea-6">
@@ -69,8 +52,7 @@
         <img src="img/vector.jpg" alt="" class = "girl-dp" id="imagePath" />
         <div class="wish">
           <h3 class="wish-hbd">Happy Valentine's Day Gorgeous</h3>
-          <h5 id="wishText">Will you be my Valentines?</h5>
-          
+          <h5 id="wishText">kuch kuch</h5>
         </div>
       </div>
       <div class="seven">
@@ -147,51 +129,6 @@
         <p class="last-smile">:)</p>
       </div>
     </div>
-    <script type="module">
-    import confetti from 'https://cdn.skypack.dev/canvas-confetti';
-    const yesButton = document.getElementById('yesButton');
-    const noButton = document.getElementById('noButton');
-    const imageDisplay = document.getElementById('imageDisplay');
-    const valentineQuestion = document.getElementById('valentineQuestion');
-    const responseButtons = document.getElementById('responseButtons');
-  
-    let noClickCount = 0;
-    let buttonHeight = 48; // Starting height in pixels
-    let buttonWidth = 80;
-    let fontSize = 20; // Starting font size in pixels
-    const imagePaths = [
-      "./images/image1.gif",
-      "./images/image2.gif",
-      "./images/image3.gif",
-      "./images/image4.gif",
-      "./images/image5.gif",
-      "./images/image6.gif",
-      "./images/image7.gif"
-    ];
-  
-    noButton.addEventListener('click', function() {
-      if (noClickCount < 5) {
-        noClickCount++;
-        imageDisplay.src = imagePaths[noClickCount];
-        buttonHeight += 35; // Increase height by 5px on each click
-        buttonWidth += 35;
-        fontSize += 25; // Increase font size by 1px on each click
-        yesButton.style.height = `${buttonHeight}px`; // Update button height
-        yesButton.style.width = `${buttonWidth}px`;
-        yesButton.style.fontSize = `${fontSize}px`; // Update font size
-        if (noClickCount < 6) {
-          noButton.textContent = ["No", "Are you sure?", "Pookie please", "Don't do this to me :(", "You're breaking my heart", "I'm gonna cry..."][noClickCount];
-        }
-      }
-    });
-  
-    yesButton.addEventListener('click', () => {
-      imageDisplay.src = './images/image7.gif'; // Change to image7.gif
-      valentineQuestion.textContent = "Yayyy!! :3"; // Change the question text
-      responseButtons.style.display = 'none'; // Hide both buttons
-      confetti(); // Trigger confetti animation
-    });
-  </script>  
   </body>
 
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
