@@ -1,53 +1,3 @@
-var canvas = document.getElementById("starfield");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-var context = canvas.getContext("2d");
-var stars = 500;
-var colorrange = [0, 60, 240];
-var starArray = [];
-
-function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// Initialize stars with random opacity values
-for (var i = 0; i < stars; i++) {
-    var x = Math.random() * canvas.offsetWidth;
-    var y = Math.random() * canvas.offsetHeight;
-    var radius = Math.random() * 1.2;
-    var hue = colorrange[getRandom(0, colorrange.length - 1)];
-    var sat = getRandom(50, 100);
-    var opacity = Math.random();
-    starArray.push({ x, y, radius, hue, sat, opacity });
-}
-
-var frameNumber = 0;
-var opacity = 0;
-var secondOpacity = 0;
-var thirdOpacity = 0;
-
-var baseFrame = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
-
-function drawStars() {
-    for (var i = 0; i < stars; i++) {
-        var star = starArray[i];
-
-        context.beginPath();
-        context.arc(star.x, star.y, star.radius, 0, 360);
-        context.fillStyle = "hsla(" + star.hue + ", " + star.sat + "%, 88%, " + star.opacity + ")";
-        context.fill();
-    }
-}
-
-function updateStars() {
-    for (var i = 0; i < stars; i++) {
-        if (Math.random() > 0.99) {
-            starArray[i].opacity = Math.random();
-        }
-    }
-}
-
 // Animation Timeline
 const animationTimeline = () => {
   // Spit chars that needs to be animated individually
@@ -338,6 +288,7 @@ const fetchData = () => {
               .setAttribute("src", data[customData]);
           } else {
             document.getElementById(customData).innerText = data[customData];
+            document.body.style.backgroundColor = "#AA0000";
           }
         }
       });
